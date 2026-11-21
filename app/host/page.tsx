@@ -144,7 +144,7 @@ export default function HostDashboard() {
 
   const shareWhatsApp = (invite: Invite) => {
     const url = getInviteUrl(invite.token);
-    const greeting = invite.guest_name ? `الأخ الكريم ${invite.guest_name}` : "ضيفنا الكريم";
+    const greeting = invite.guest_name ? `الأخت الكريمة ${invite.guest_name}` : "ضيفتنا الكريمة";
     const text = `السلام عليكم ورحمة الله وبركاته،\n${greeting} يسعدنا ويشرفنا حضوركم لحفل زفاف (${wedding.groom} & ${wedding.bride}) يوم الثلاثاء 1 ديسمبر 2026 في قاعة ${wedding.venue.nameAr}.\n\nرابط بطاقة الدعوة ورمز الدخول الخاص بكم:\n${url}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
