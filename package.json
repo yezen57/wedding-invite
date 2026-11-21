@@ -1,0 +1,33 @@
+{
+  "name": "zaid-arwa-wedding",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "ornaments": "node scripts/convert-ornaments.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "@yudiel/react-qr-scanner": "^2.6.0",
+    "framer-motion": "^14.14.0",
+    "jose": "^6.2.18",
+    "nanoid": "^6.0.2",
+    "next": "^15.5.29",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "ffmpeg-static": "^5.3.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  }
+}
