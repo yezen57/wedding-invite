@@ -15,58 +15,90 @@ export function Cover({ guestName, partySize }: { guestName?: string | null; par
   return (
     <section data-snap data-ornament="full" className="snap-section">
       <TopOrnament />
-      <div className="mt-16 flex flex-col items-center text-center">
+      <div className="mt-14 flex flex-col items-center text-center">
         <motion.p
           className="font-display text-lg text-taupe"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
         >
           {copy.cover.bismillah}
         </motion.p>
 
-        {guestName && (
-          <motion.p
-            className="mt-6 text-base text-bronze"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease }}
-          >
-            {copy.pass.greeting} <span className="font-bold">{guestName}</span>
-            {partySize ? <span className="block text-sm text-taupe mt-1">({copy.pass.partySize(partySize)})</span> : null}
-          </motion.p>
-        )}
-
-        <motion.p
-          className="mt-6 max-w-[19rem] text-[1.02rem] leading-8 text-taupe"
+        {/* Poetic Opening from the Card */}
+        <motion.div
+          className="mt-5 max-w-[22rem] font-display text-[1.12rem] sm:text-[1.25rem] leading-8 text-bronze tracking-wide"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.7, ease }}
+          transition={{ duration: 1, delay: 0.4, ease }}
         >
-          {copy.cover.intro}
-        </motion.p>
+          <p>{copy.cover.poem1}</p>
+          <p>{copy.cover.poem2}</p>
+          <p className="mt-1 font-body text-sm font-medium text-taupe">{copy.cover.poem3}</p>
+        </motion.div>
 
+        {/* Swans Motif */}
+        <motion.div
+          className="my-4 flex items-center justify-center gap-2"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6, ease }}
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 120 54" className="h-11 w-26 text-gold drop-shadow-xs" fill="currentColor">
+            <path d="M46 32c-3-7-8-16-4-23 4-6 13-5 15 2 1 3 0 8-3 12l-5 5c5 1 10 5 11 11 1 7-5 13-12 13-9 0-17-6-19-14-1-3 1-6 5-6 3 0 6 1 8 1zm28 0c3-7 8-16 4-23-4-6-13-5-15 2-1 3 0 8 3 12l5 5c-5 1-10 5-11 11-1 7 5 13 12 13 9 0 17-6 19-14 1-3-1-6-5-6-3 0-6 1-8 1z" opacity="0.88"/>
+          </svg>
+        </motion.div>
+
+        {/* Hosts Invitation */}
+        <motion.div
+          className="flex flex-col items-center gap-1 text-center font-display text-[1.18rem] sm:text-[1.28rem] text-bronze"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8, ease }}
+        >
+          <p className="font-semibold text-gold">{copy.cover.host1}</p>
+          <p className="font-semibold text-gold">{copy.cover.host2}</p>
+          <p className="mt-1 font-body text-sm text-taupe">{copy.cover.invitationCall}</p>
+        </motion.div>
+
+        {/* Personalized Guest Greeting if token present */}
+        {guestName && (
+          <motion.div
+            className="mt-4 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-5 py-1.5 text-base text-bronze shadow-xs"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1, ease }}
+          >
+            <span>{copy.pass.greeting} <strong className="text-gold font-bold">{guestName}</strong></span>
+            {partySize ? <span className="mr-1.5 text-xs text-taupe">({copy.pass.partySize(partySize)})</span> : null}
+          </motion.div>
+        )}
+
+        {/* Bride & Groom Names */}
         <motion.h1
-          className="mt-8 font-display leading-none"
+          className="mt-6 font-display leading-none"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 1, ease }}
+          transition={{ duration: 1.3, delay: 1.1, ease }}
         >
           <span className="gold-text block text-[4.6rem] sm:text-[6rem] pb-2">{wedding.groom}</span>
           <span className="block font-serif text-4xl text-gold my-1">{copy.cover.and}</span>
           <span className="gold-text block text-[4.6rem] sm:text-[6rem] pb-2">{wedding.bride}</span>
         </motion.h1>
 
+        {/* Date & Venue Lines */}
         <motion.div
-          className="mt-8 flex flex-col items-center gap-2"
+          className="mt-7 flex flex-col items-center gap-1.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.5 }}
+          transition={{ duration: 1.2, delay: 1.4 }}
         >
-          <span className="h-px w-16 bg-linear-to-l from-transparent via-[var(--gold)] to-transparent" />
+          <span className="h-px w-20 bg-linear-to-l from-transparent via-[var(--gold)] to-transparent" />
           <p className="text-xl font-medium tracking-wide text-bronze">{copy.cover.dateLine}</p>
-          <p className="font-serif text-lg tracking-[0.35em] text-gold">{dateDots()}</p>
-          <span className="h-px w-16 bg-linear-to-l from-transparent via-[var(--gold)] to-transparent" />
+          <p className="font-display text-lg text-gold">{copy.cover.venueLine}</p>
+          <p className="font-serif text-sm tracking-[0.3em] text-taupe mt-0.5">{dateDots()}</p>
+          <span className="h-px w-20 bg-linear-to-l from-transparent via-[var(--gold)] to-transparent" />
         </motion.div>
       </div>
     </section>

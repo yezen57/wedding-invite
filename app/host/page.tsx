@@ -145,7 +145,7 @@ export default function HostDashboard() {
   const shareWhatsApp = (invite: Invite) => {
     const url = getInviteUrl(invite.token);
     const greeting = invite.guest_name ? `الأخت الكريمة ${invite.guest_name}` : "ضيفتنا الكريمة";
-    const text = `السلام عليكم ورحمة الله وبركاته،\n${greeting} يسعدنا ويشرفنا حضوركم لحفل زفاف (${wedding.groom} & ${wedding.bride}) يوم الثلاثاء 1 ديسمبر 2026 في قاعة ${wedding.venue.nameAr}.\n\nرابط بطاقة الدعوة ورمز الدخول الخاص بكم:\n${url}`;
+    const text = `السلام عليكم ورحمة الله وبركاته،\n${greeting}،\n\nتتشرف حرم / صدام علي ناجي وحرم / معاذ عبده الحرثي بدعوتكم لحضور حفل زفاف (${wedding.groom} & ${wedding.bride})\n\n"في ليلة زاهية يضوي الفرح بعالي سماه\nوبقلوب يملؤها الفرح وتغمرها السعادة\nبصادق الود والمحبة"\n\n📅 الموعد: يوم الثلاثاء 1/12/2026\n📍 المكان: في قاعة توباز\n\nرابط بطاقة الدعوة ورمز الدخول الخاص بكم:\n${url}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 

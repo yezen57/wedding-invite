@@ -67,12 +67,12 @@ export function MusicPlayer() {
         disabled={unavailable}
         aria-label={playing ? copy.ui.pause : copy.ui.play}
         aria-pressed={playing}
-        className="focus-gold relative grid h-14 w-14 place-items-center rounded-full shadow-[0_10px_24px_-10px_rgb(142_107_59/0.6)] disabled:opacity-40"
+        className="focus-gold relative grid h-14 w-14 place-items-center rounded-full shadow-[0_10px_24px_-10px_rgb(99_34_56/0.45)] disabled:opacity-40"
       >
         {/* record */}
-        <span data-playing={playing} className="vinyl absolute inset-0 rounded-full ring-1 ring-[rgb(177_138_78/0.5)]" />
+        <span data-playing={playing} className="vinyl absolute inset-0 rounded-full ring-1 ring-[rgb(179_89_120/0.5)]" />
         {/* gold label + icon */}
-        <span className="relative grid h-6 w-6 place-items-center rounded-full bg-[radial-gradient(circle_at_35%_30%,var(--sand),var(--gold)_55%,var(--bronze))] ring-1 ring-[rgb(255_248_238/0.5)]">
+        <span className="relative grid h-6 w-6 place-items-center rounded-full bg-[radial-gradient(circle_at_35%_30%,var(--sand),var(--gold)_55%,var(--bronze))] ring-1 ring-[rgb(255_248_250/0.6)]">
           {playing ? (
             <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" aria-hidden>
               <rect x="2.5" y="2" width="2.4" height="8" rx=".6" fill="var(--ivory)" />

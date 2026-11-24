@@ -119,10 +119,10 @@ export function SectionNav() {
           ? copy.ui.prev
           : "بدء التمرير التلقائي بهدوء للأسفل"
       }
-      className={`focus-gold fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 z-50 grid h-14 w-14 place-items-center rounded-full border shadow-[0_10px_24px_-14px_rgb(142_107_59/0.55)] backdrop-blur-md transition-all active:scale-95 ${
+      className={`focus-gold fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 z-50 grid h-14 w-14 place-items-center rounded-full border shadow-[0_10px_24px_-14px_rgb(99_34_56/0.35)] backdrop-blur-md transition-all active:scale-95 ${
         isAutoScrolling
-          ? "border-[var(--gold)] bg-ivory text-gold ring-2 ring-[rgb(177_138_78/0.4)]"
-          : "border-[var(--card-border)] bg-[rgb(255_252_247/0.75)] text-gold"
+          ? "border-[var(--gold)] bg-ivory text-gold ring-2 ring-[rgb(179_89_120/0.4)]"
+          : "border-[var(--card-border)] bg-[rgb(255_248_250/0.8)] text-gold"
       }`}
     >
       <AnimatePresence mode="wait">

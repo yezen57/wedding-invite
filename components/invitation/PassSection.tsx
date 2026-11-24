@@ -27,8 +27,8 @@ export function PassSection({
         width: 320,
         margin: 1.5,
         color: {
-          dark: "#3A2E1E",
-          light: "#FFFDF9",
+          dark: "#632238",
+          light: "#FFF8FA",
         },
       })
         .then(setQrUrl)
@@ -44,50 +44,55 @@ export function PassSection({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Draw luxury card
-    ctx.fillStyle = "#FFFBF4";
+    // Draw luxury blush rose card
+    ctx.fillStyle = "#FFF5F7";
     ctx.fillRect(0, 0, 600, 840);
 
-    ctx.strokeStyle = "#B18A4E";
+    ctx.strokeStyle = "#B35978";
     ctx.lineWidth = 3;
     ctx.strokeRect(20, 20, 560, 800);
 
     ctx.lineWidth = 1;
     ctx.strokeRect(28, 28, 544, 784);
 
-    ctx.fillStyle = "#8E6B3B";
+    ctx.fillStyle = "#632238";
     ctx.textAlign = "center";
     ctx.font = "bold 34px serif";
-    ctx.fillText(`${wedding.groom} & ${wedding.bride}`, 300, 90);
+    ctx.fillText(`${wedding.groom} & ${wedding.bride}`, 300, 85);
 
-    ctx.font = "20px serif";
-    ctx.fillText(copy.pass.title, 300, 135);
+    ctx.font = "16px sans-serif";
+    ctx.fillStyle = "#965A6E";
+    ctx.fillText("تتشرف حرم / صدام علي ناجي وحرم / معاذ عبده الحرثي", 300, 120);
+
+    ctx.font = "bold 20px serif";
+    ctx.fillStyle = "#B35978";
+    ctx.fillText(copy.pass.title, 300, 155);
 
     if (guestName) {
-      ctx.fillStyle = "#3A2E1E";
+      ctx.fillStyle = "#632238";
       ctx.font = "bold 24px sans-serif";
-      ctx.fillText(`${copy.pass.greeting} ${guestName}`, 300, 190);
+      ctx.fillText(`${copy.pass.greeting} ${guestName}`, 300, 195);
     }
 
-    ctx.fillStyle = "#B18A4E";
+    ctx.fillStyle = "#B35978";
     ctx.font = "20px sans-serif";
     ctx.fillText(copy.pass.partySize(partySize), 300, 230);
 
     // Draw QR image
     const img = new Image();
     img.onload = () => {
-      ctx.drawImage(img, 160, 270, 280, 280);
+      ctx.drawImage(img, 160, 260, 280, 280);
 
-      ctx.fillStyle = "#A9947D";
+      ctx.fillStyle = "#965A6E";
       ctx.font = "16px sans-serif";
-      ctx.fillText(copy.pass.hint, 300, 600);
+      ctx.fillText(copy.pass.hint, 300, 595);
 
-      ctx.fillStyle = "#8E6B3B";
+      ctx.fillStyle = "#632238";
       ctx.font = "22px serif";
-      ctx.fillText(`${wedding.venue.nameAr} - ${wedding.venue.nameEn}`, 300, 690);
+      ctx.fillText(`${wedding.venue.nameAr} - ${wedding.venue.nameEn}`, 300, 680);
 
       ctx.font = "18px serif";
-      ctx.fillText(dateDots(), 300, 730);
+      ctx.fillText(dateDots(), 300, 720);
 
       const a = document.createElement("a");
       a.download = `wedding-pass-${token.slice(0, 8)}.png`;
@@ -107,6 +112,7 @@ export function PassSection({
       <Reveal delay={0.1} className="paper-card mt-6 w-full max-w-[22rem] p-6 text-center">
         <div ref={cardRef} className="flex flex-col items-center">
           <p className="font-serif text-lg font-medium text-gold">{dateDots()}</p>
+          <p className="text-xs text-taupe mt-1 mb-0.5">تتشرف حرم / صدام علي ناجي وحرم / معاذ عبده الحرثي</p>
           <h3 className="font-display text-3xl text-bronze">
             {wedding.groom} & {wedding.bride}
           </h3>
@@ -123,7 +129,7 @@ export function PassSection({
             {copy.pass.partySize(partySize)}
           </p>
 
-          <div className="my-5 flex aspect-square w-52 items-center justify-center rounded-2xl border-2 border-[var(--gold)] bg-[#FFFDF9] p-3 shadow-inner">
+          <div className="my-5 flex aspect-square w-52 items-center justify-center rounded-2xl border-2 border-[var(--gold)] bg-[#FFF8FA] p-3 shadow-inner">
             {isUsed ? (
               <div className="flex flex-col items-center justify-center p-3 text-center">
                 <svg viewBox="0 0 24 24" className="h-10 w-10 text-gold" fill="none" stroke="currentColor" strokeWidth="1.8">
