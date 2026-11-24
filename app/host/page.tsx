@@ -112,7 +112,7 @@ export default function HostDashboard() {
       if (res.ok) {
         setInvitations((prev) => prev.filter((i) => i.id !== id));
       }
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const handleReactivate = async (id: string) => {
@@ -127,7 +127,7 @@ export default function HostDashboard() {
           prev.map((i) => (i.id === id ? { ...i, used_at: null } : i))
         );
       }
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const getInviteUrl = (token: string) => {
@@ -336,11 +336,10 @@ export default function HostDashboard() {
               <button
                 key={mode}
                 onClick={() => setFilter(mode)}
-                className={`rounded-xl px-3 py-1.5 text-xs font-medium transition ${
-                  filter === mode
-                    ? "bg-[var(--gold)] text-white"
-                    : "border border-[var(--card-border)] bg-white text-taupe hover:text-bronze"
-                }`}
+                className={`rounded-xl px-3 py-1.5 text-xs font-medium transition ${filter === mode
+                  ? "bg-[var(--gold)] text-white"
+                  : "border border-[var(--card-border)] bg-white text-taupe hover:text-bronze"
+                  }`}
               >
                 {mode === "all" ? "الكل" : mode === "unused" ? "لم يدخلوا" : "دخلوا القاعة"}
               </button>
